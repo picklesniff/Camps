@@ -21,7 +21,6 @@ const reviewsRoutes = require('./routes/reviews');
 const MongoStore = require('connect-mongo')(session);
 
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/re-yelp-camp';
-
 mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
@@ -39,7 +38,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(mongoSanitize());
+app.use(mongoSanitize({
+    replaceWith: '_'
+}));
 
 const secret = process.env.SECRET || 'COULDBEASECRET';
 
@@ -106,7 +107,7 @@ app.use(
                 "'self'",
                 "blob:",
                 "data:",
-                "https://res.cloudinary.com/dxtkoqd6k/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT! 
+                "https://res.cloudinary.com/dxtkoqd6k/",  
                 "https://images.unsplash.com/",
             ],
             fontSrc: ["'self'", ...fontSrcUrls],
