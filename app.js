@@ -18,7 +18,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const userRoutes = require('./routes/users');
 const campgroundsRoutes = require('./routes/campgrounds');
 const reviewsRoutes = require('./routes/reviews');
-const MongoStore = require('connect-mongo')(session);
+const MongoDBStore = require("connect-mongo")(session);
 
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/re-yelp-camp';
 mongoose.connect(dbUrl);
@@ -44,7 +44,7 @@ app.use(mongoSanitize({
 
 const secret = process.env.SECRET || 'COULDBEASECRET';
 
-const store = new MongoStore({
+const store = new MongoDBStore({
     url: dbUrl,
     secret,
     touchAfter: 24 * 60 * 60
