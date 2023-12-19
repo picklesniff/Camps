@@ -21,7 +21,11 @@ const reviewsRoutes = require('./routes/reviews');
 const MongoDBStore = require("connect-mongo")(session);
 
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/re-yelp-camp';
-mongoose.connect(dbUrl);
+
+mongoose.connect(dbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -69,7 +73,10 @@ const sessionConfig = {
 }
 app.use(session(sessionConfig));
 app.use(flash());
-app.use(helmet({contentSecurityPolicy: false}));
+app.use(helmet({
+    contentSecurityPolicy: false, 
+    crossOriginEmbedderPolicy: false, 
+}));
 
 const scriptSrcUrls = [
     "https://cdn.jsdelivr.net/npm/",
@@ -149,5 +156,5 @@ app.use((err, req, res, next) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log(`Serving on port ${port}`)
+    console.log(`Serving at http://localhost:${port}`)
 })
