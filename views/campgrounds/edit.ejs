@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate')%>
 
 <div class="row">
-    <h1 class="text-center">Edit Campground</h1>
+    <h1 class="text-center">EDIT LOCATION</h1>
     <div class="col-6 offset-3">
         <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
             <div class="mb-3">
@@ -9,7 +9,7 @@
                 <input class="form-control" type="text" id="title" name="campground[title]"
                     value="<%=campground.title %>" required>
                 <div class="valid-feedback">
-                    Looks good!
+                    Not bad!
                 </div>
             </div>
             <div class="mb-3">
@@ -17,17 +17,17 @@
                 <input class="form-control" type="text" id="location" name="campground[location]"
                 value="<%=campground.location %>" required>
             <div class="valid-feedback">
-                Looks good!
+                Not bad!
             </div>
             </div>
             <div class="mb-3">
-                <label class="form-label" for="price">Campground Price</label>
+                <label class="form-label" for="price">Expences to expect</label>
                 <div class="input-group">
                     <span class="input-group-text" id="price-label">$</span>
                     <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
                         aria-describedby="price-label" name="campground[price]" value="<%=campground.price %>"
                         required><div class="valid-feedback">
-                        Looks good!
+                        Not bad!
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <textarea class="form-control" type="text" id="description" name="campground[description]"
                     required><%= campground.description%></textarea>
                 <div class="valid-feedback">
-                    Looks good!
+                    Not bad!
                 </div>
             </div>
             <div class="mb-3 col-6">
@@ -54,10 +54,10 @@
                 <% })%>
             </div>
             <div class="mb-3">
-                <button class="btn btn-info">Update Campground</button>
+                <button class="btn btn-info">Update Wild Place To Explore</button>
             </div>
         </form>
-        <a href="/campgrounds/<%= campground._id%>">Back To Campground</a>
+        <a href="/campgrounds/<%= campground._id%>">Back To All</a>
 
     </div>
 </div>
