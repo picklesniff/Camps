@@ -2,10 +2,9 @@ body {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url("https://images.unsplash.com/photo-1653184860948-3e215c726452?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-        /* url("https://images.unsplash.com/photo-1515408320194-59643816c5b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhbXBpbmclMjBhdXN0cmFsaWF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60"); */
     background-size: cover;
     background-position: center;
-    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0.05rem 0.12rem rgba(255, 255, 255, 0.5);
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
     transition: all 0.5 ease-in-out;
 }
@@ -20,6 +19,9 @@ body {
     content: "Explore Wild Australia";
 }
 
+#navbar__links {
+    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+}
 .cover-container {
     margin-top: 0.5rem;
     max-width: 60vw;

@@ -1,3 +1,15 @@
+body {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)),
+        url("https://images.unsplash.com/photo-1653184860948-3e215c726452?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 0.08rem 0.1rem rgba(55, 55, 55, 0.9);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.9);
+    transition: all 0.5 ease-in-out;
+    border: 1rem #464646;
+    filter: drop-shadow(2.5px 2.5px 2.5px #343434);
+}
 #cluster-map {
     width: 100%;
     height: 500px;
@@ -6,13 +18,24 @@
 #map {
     width: 100%;
     height: 300px;
-    margin-bottom: 2rem;
-    border: 1rem #464646;
-    filter: drop-shadow(2.5px 2.5px 2.5px #464646);
 }
 
-#cluster-map{
+#cluster-map {
+    border-radius: 8px;
     margin-bottom: 2rem;
-    border: 1rem #464646;
-    filter: drop-shadow(2.5px 2.5px 2.5px #343434);
+
+}
+
+.mapboxgl-popup-content {
+    text-decoration: none;
+    background-color: rgba(55, 55, 55, 0.8);
+    text-shadow: none;
+}
+
+#search {
+    margin-bottom: 1.5rem;
+}
+
+#search__label{
+    padding-top: 0.2rem;
 }

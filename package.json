@@ -23,6 +23,7 @@
     "express-session": "^1.17.3",
     "helmet": "^7.0.0",
     "joi": "^17.9.2",
+    "locus": "^2.0.4",
     "method-override": "^3.0.0",
     "mongo": "^0.1.0",
     "mongodb": "4.0",
